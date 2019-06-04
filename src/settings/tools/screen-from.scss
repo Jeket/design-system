@@ -1,0 +1,11 @@
+@mixin tbds-screen-from($breakpoint) {
+  $value: map-get($tbds-breakpoints, $breakpoint);
+
+  @if $value != null {
+    @media screen and (min-width: $value) {
+      @content;
+    }
+  } @else {
+    @error "`#{$breakpoint}` is not a valid value. Please make sure it is defined in `$tbds-breakpoints` map.";
+  }
+}
