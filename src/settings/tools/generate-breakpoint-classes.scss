@@ -3,16 +3,21 @@
 @mixin tbds-generate-breakpoint-classes(
   $property,
   $value,
-  $variant,
+  $selector,
+  $important: null,
 ) {
-  .tbds-#{$property}-#{$variant} {
-    #{$property}: unquote(#{$value}) !important;
+  @if $important {
+    $important: "!important";
+  }
+
+  .tbds-#{$selector} {
+    #{$property}: unquote(#{$value})#{$important};
   }
 
   @each $breakpoint, $breakpoint-value in $tbds-breakpoints {
     @media (min-width: $breakpoint-value) {
-      .tbds-#{$property}-#{$variant}\@#{$breakpoint} {
-        #{$property}: unquote(#{$value}) !important;
+      .tbds-#{$selector}\@#{$breakpoint} {
+        #{$property}: unquote(#{$value})#{$important};
       }
     }
   }
