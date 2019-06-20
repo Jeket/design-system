@@ -5,6 +5,16 @@ project adheres to [Semantic Versioning](http://semver.org).
 
 ## [Unreleased (`master`)][unreleased]
 
+### Added
+
+- Added `$tbds-control-block-size` to set controls (text inputs and buttons) to
+  the same block size.
+
+### Changed
+
+- When using `tbds-form` elements (e.g. `tbds-form__text-input`), you now must
+  ensure that the parent `<form>` has the `tbds-form` class.
+
 [unreleased]: https://github.com/thoughtbot/design-system/compare/v0.3.0...HEAD
 
 ## [0.3.0] - 2019-06-19
